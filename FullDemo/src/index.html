@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://www.pca.com.br/site/Content/image/favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Demonstração PCA FlexGateway</title>
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/global.css">
+</head>
+
+<body>
+    <main>
+        <div class="container p-4">
+            <div class="col-md-12 m-3">
+                <h4 class="text-center">Demonstração PCA FlexGateway com Tela de Checkout</h4>
+                <p>
+                    Esta aplicação permite testar e utilizar as funcionalidades principais do FlexGateway
+                    desenvolvido pela PCA.
+                </p>
+                <p>
+                    O primeiro formulário permite alterar os parâmetros de entrada do FlexGateway do modo como desejar.
+                    Ao configurar os parâmetros, clique em "ABRIR TELA DE CHECKOUT" para exibir o modal com o formulário
+                    de pagamento.
+                </p>
+                <p>
+                    O formulário visualizado dentro do modal pode ser incorporado facilmente dentro da sua aplicação.
+                    Deste modo, é possível gerar tokens de cobrança e realizar cobranças via cartão de crédito sem
+                    se preocupar em construir um formulário de checkout. Tal formulário já vem integrado com todos
+                    os componentes do FlexGateway, simplificando as operações. Ao finalizar o processo de checkout,
+                    o resultado da operação é retornado para a sua aplicação por meio uma função de callback indicada
+                    pela sua aplicação.
+                </p>
+                <p>
+                    Caso tenha interesse em implementar a sua própria tela de checkout, e apenas utilizar os
+                    serviços para realização das cobranças,
+                    <a href="https://stage3.pca.com.br/FlexGateway/CoreDemo" target="_blank">clique aqui</a>
+                </p>
+                <br />
+            </div>
+            <form name="form-checkout">
+                <div>
+                    <h6>Parâmetros FlexGateway</h6>
+                </div>
+                <div class="row p-4 border">
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label for="" class="form-label">API Key</label>
+                            <input class="form-control" name="apiKey" value="1CDFC221-F9BA-4D68-AE0D-DC491B46CCAC">
+                            <small class="form-text text-muted">Chave autenticação FlexGateway</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label for="" class="form-label">Descrição</label>
+                            <textarea class="form-control" rows="3" name="description">Assinatura PCA</textarea>
+                            <small class="form-text text-muted">Descrição dos itens a serem
+                                cobrados</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label class="form-label">Valor</label>
+                            <input class="form-control" name="amount" placeholder="99.99" value="59.9">
+                            <small class="form-text text-muted">Valor a ser cobrado</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label class="form-label">Código Transação</label>
+                            <input class="form-control" name="transactionCode" value="CODIGO-TRANSACAO-1">
+                            <small class="form-text text-muted">Código transação</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div>
+                            <label class="form-label">Código cliente</label>
+                            <input class="form-control" name="customerCode" value="CODIGO-CLIENTE-1">
+                            <small class="form-text text-muted">Código cliente</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="" class="form-label">Tipo ação</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="action" value="Tokenize"
+                                    id="action-tokenize">
+                                <label class="form-check-label" for="action-tokenize">
+                                    Tokenize
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="action" id="action-capture"
+                                    value="Capture" checked>
+                                <label class="form-check-label" for="action-capture">
+                                    Capture
+                                </label>
+                            </div>
+                        </div>
+                        <small class="form-text text-muted">Tipo de ação a ser realizada no
+                            checkout (Tokenize | Capture)</small>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-primary" onclick="loadFlexgatewayParams()"
+                            data-bs-toggle="modal" data-bs-target="#modal-checkout">
+                            ABRIR TELA DE CHECKOUT
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modal-checkout" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Checkout</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!--FLEXGATEWAY DIV-->
+                        <div id="pca-flexgateway-app" data-api-key="1CDFC221-F9BA-4D68-AE0D-DC491B46CCAC"
+                            data-additional-info='{ "ammount": 59.9, "description": "Assinatura PCA", "transactionCode": "CODIGO-TRANSACAO-1", "customerCode": "CODIGO-CLIENTE-1", "action": "Capture" }'>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--SCRIPTS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+    <script defer="defer" src="https://stage3.pca.com.br/FlexGateway/Cdn/pca-flexgateway.js"></script>
+    <script defer="defer" src="./assets/js/main.js"></script>
+</body>
+
+</html>

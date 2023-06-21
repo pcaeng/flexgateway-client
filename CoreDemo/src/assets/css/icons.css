@@ -1,0 +1,39 @@
+.card-icon:before {
+    content: "";
+    background: url("../icons/credit-card.svg") center / contain no-repeat;
+}
+.calendar-icon:before {
+    content: "";
+    background: url("../icons/calendar.svg") center / contain no-repeat;
+}
+.user-icon:before {
+    content: "";
+    background: url("../icons/user.svg") center / contain no-repeat;
+}
+.cvv-icon:before {
+    content: "";
+    background: url("../icons/cvv.svg") center / contain no-repeat;
+}
+.settings-icon:before {
+    content: "";
+    background: url("../icons/settings.svg") center / contain no-repeat;
+}
+.history-icon:before {
+    content: "";
+    background: url("../icons/history.svg") center / contain no-repeat;
+}
+
+.info-icon {
+    content: "";
+    background: url("../icons/info.svg") center / contain no-repeat;
+    height: 18px;
+    width: 18px;
+    /* color: white; */
+}
+
+.copy-icon {
+    content: "";
+    background: url("../icons/copy.svg") center / contain no-repeat;
+    height: 35px;
+    width: 35px;
+}

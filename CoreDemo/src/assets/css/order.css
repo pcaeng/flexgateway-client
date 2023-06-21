@@ -1,0 +1,31 @@
+.order-container {
+    border: 1px solid #ECEFF1;
+    border-radius: 20px;
+    padding: 12px;
+}
+
+.order-container .order-label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 22px;
+}
+
+.order-container .order-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 22px;
+    color: #00FFE9;
+}
+
+.order-container .order-value {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 34px;
+    color: #00FFE9;
+}

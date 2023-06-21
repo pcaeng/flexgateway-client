@@ -1,0 +1,16 @@
+footer {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.625rem;
+    line-height: 12px;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #134E88;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 24px;
+}

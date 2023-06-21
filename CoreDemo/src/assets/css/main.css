@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.content-container {
+    padding-bottom: 24px;
+    background-image: url('../images//content-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    min-height: calc(100vh - 24px - 89px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color:#00FFE9;
+}
+
+.button-primary {
+    background: #00FFE9;
+    border-radius: 30px;
+    border: 1px solid #00FFE9;
+    outline: none;
+    padding: 15px 80px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 22px;
+    color: #134E88;
+}
+
+.button-secondary {
+    border: 1px solid #00FFE9;
+    background-color: #0080D0;
+    border-radius: 30px;
+    outline: none;
+    padding: 15px 80px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 22px;
+    color: #00FFE9;
+}
+
+.button-default {
+    border: 1px solid #134E88;
+    background-color: #134E88;
+    border-radius: 30px;
+    outline: none;
+    padding: 8px 48px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 22px;
+    color: #fff;
+}
+
+.button-default.grey-button {
+    border-color: #505050;
+    color: #505050;
+    background-color: transparent;
+}
+
+.button-default-outlined {
+    border: 1px solid #134E88;
+    background-color: transparent;
+    border-radius: 30px;
+    outline: none;
+    padding: 8px 48px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 22px;
+    color: #134E88;
+}
+
+.button-default-icon {
+    border: 1px solid #134E88;
+    background-color: #134E88;
+    border-radius: 30px;
+    outline: none;
+    padding: 15px 28px 15px 54px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 22px;
+    color: #fff;
+}
+
+#flags-container {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.flag-icon {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+    opacity: 0.4;
+    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+}
+.flag-icon[data-selected='true'] {
+    opacity: 1;
+    filter: drop-shadow(-1px 1px 3px white);
+}
+
+.green-text {
+    color: #20753f;
+}
+
+.red-text {
+    color:#b50e05;
+}
