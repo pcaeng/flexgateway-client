@@ -15,7 +15,7 @@ A solução "Core", possibilita manter a identidade visual da sua aplicação. O
 Primeiramente, importe o Flex Gateway Full Checkout para dentro da sua aplicação Web.
 
 ```html
-<script defer="defer" src="https://stage3.pca.com.br/FlexGateway/Cdn/pca-flexgateway.js"></script>
+<script defer="defer" src="https://democdn.flexgateway.com.br/pca-flexgateway.js"></script>
 ```
 Crie a tag html onde será renderizada a tela de checkout do Flex Gateway
 ```html
@@ -86,14 +86,14 @@ A model retornada na função de callback segue o schema abaixo:
 }
 ```
 ### **Informações complementares**
-Uma vez obtido o token do cartão de crédito, é possível realizar cobranças futuras por meio da utilização da nossa API. A sua api key será utilizada na autenticação e o token do cartão de crédito gerado será utilizado para efetuar cobranças. Portanto, para realizar cobranças recorrentes sem precisar solicitar novamente ao cliente dados de cartão de crédito, uma opção é armazenar o token do cartão a fim de utilizar em futuras cobranças. Para mais informações, acesse a documentação da nossa api [clicando aqui](https://stage3.pca.com.br/FlexGateway/ClientApi/swagger)
+Uma vez obtido o token do cartão de crédito, é possível realizar cobranças futuras por meio da utilização da nossa API. A sua api key será utilizada na autenticação e o token do cartão de crédito gerado será utilizado para efetuar cobranças. Portanto, para realizar cobranças recorrentes sem precisar solicitar novamente ao cliente dados de cartão de crédito, uma opção é armazenar o token do cartão a fim de utilizar em futuras cobranças. Para mais informações, acesse a documentação da nossa api [clicando aqui](https://demoapi.flexgateway.com.br/swagger)
 
 ## **Guia utilização Core Checkout**
 
 ### Importação no projeto
 
 ```html
-<script defer="defer" src="https://stage3.pca.com.br/FlexGateway/Cdn/pca-flexgateway-core.js"></script>
+<script defer="defer" src="https://democdn.flexgateway.com.br/pca-flexgateway-core.js"></script>
 ```
 
 ### Inicializando
