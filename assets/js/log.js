@@ -87,7 +87,7 @@ async function getLogs(apiKey, token) {
     let result = [];
     try {
         const response = await fetch(
-            `https://stage3.pca.com.br/FlexGateway/Api/api/Eventos?ChaveApi=${apiKey.toUpperCase()}&Token=${token.toUpperCase()}`,
+            `https://demoapi.flexgateway.com.br/api/Eventos?ChaveApi=${apiKey.toUpperCase()}&Token=${token.toUpperCase()}`,
             {
                 method: "GET",
                 headers: new Headers({
