@@ -98,8 +98,8 @@ Uma vez obtido o token do cartão de crédito, é possível realizar cobranças 
 
 ### Inicializando
 ```js
-    const fgConnector = new FlexGatewayConnector();
-    await fgConnector.init('<SUA_API_KEY>');
+const fgConnector = new FlexGatewayConnector();
+await fgConnector.init('<SUA_API_KEY>');
 ```
 ### Métodos **FlexGatewayConnector**
 
@@ -232,8 +232,8 @@ Uma vez instanciado, e carregado as configurações, é possível utilizar os m�
     const resultadoTokenizacao = await mgConnector.tokenize(dadosTokenizacao);
 
     // Efetua cobrança
-    const dadosCapture: IChargeModel = obterDadosCaptureFromResultadoTokenizacao(resultadoTokenizacao);
-    const resultadoCobranca = await fgConnector.capture(chargeModel);
+    const dadosCobranca: IChargeModel = obterDadosCobrancaFromResultadoTokenizacao(resultadoTokenizacao);
+    const resultadoCobranca = await fgConnector.capture(dadosCobranca);
 ```
 ### **Informações complementares**
 No Flex Gateway Core Checkout, toda a implementação e validação do formulário de checkout ficará sob responsabilidade do usuário do Flex Gateway. Nas configurações do **FlexGatewayConnector** estarão disponíveis as bandeiras permitidas e configurações de máscaras de cartão que poderão ser utilizadas como dados complementares para montar o formulário de checkout.
