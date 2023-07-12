@@ -25,10 +25,19 @@
 
 .info-icon {
     content: "";
-    background: url("../icons/info.svg") center / contain no-repeat;
-    height: 18px;
-    width: 18px;
-    /* color: white; */
+    background: url("../images/info.png") center / contain no-repeat;
+    height: 28px;
+    width: 28px;
+    margin-left: 5px;
+}
+
+.info-icon-full-checkout {
+    content: "";
+    background: url("../images/info.png") center / contain no-repeat;
+    height: 28px;
+    width: 28px;
+    margin-bottom: 10px;
+    margin-left: 5px;
 }
 
 .copy-icon {
