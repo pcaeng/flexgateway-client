@@ -115,6 +115,11 @@ function copyTextToClipboard(idName) {
     input.setSelectionRange(0, 99999);
 
     navigator.clipboard.writeText(input.value)
+
+    const alert = document.getElementById("copy-alert");
+    alert.classList.toggle('fade');
+
+    setTimeout(() => {alert.classList.toggle('fade')}, 1700);
 }
 
 function selectOptionCartao(formName) {
