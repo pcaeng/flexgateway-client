@@ -22,13 +22,9 @@ function loadFlexgatewayParams() {
 	console.log("SUCESSO!");
 	console.log(data);
 	setCurrentToken(data.creditCardToken);
-	hideCheckout();
-	goToLastStep();
-	alert("SUCESSO!");
   }
   
   function flexgatewayError(data) {
 	console.log("ERRO!");
 	console.log(data);
-	alert("ERRO!");
   }

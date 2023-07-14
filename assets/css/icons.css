@@ -26,16 +26,16 @@
 .info-icon {
     content: "";
     background: url("../images/info.png") center / contain no-repeat;
-    height: 28px;
-    width: 28px;
+    height: 30px;
+    width: 30px;
     margin-left: 5px;
 }
 
 .info-icon-full-checkout {
     content: "";
     background: url("../images/info.png") center / contain no-repeat;
-    height: 28px;
-    width: 28px;
+    height: 30px;
+    width: 30px;
     margin-bottom: 10px;
     margin-left: 5px;
 }
