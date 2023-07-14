@@ -91,3 +91,17 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+#copy-alert {
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 1.5em;
+}
+
+#copy-alert.fade {
+    opacity: 1;
+    transition: opacity 0.3s;
+}
